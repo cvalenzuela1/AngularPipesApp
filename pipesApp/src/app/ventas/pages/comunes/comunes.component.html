@@ -1,0 +1,24 @@
+<div class="text-layout">
+    <h1>Pipes Comunes</h1>
+    <p>
+        Pipes incluídos en Angular - Usualmente en el Common Module
+    </p>
+</div>
+
+<div class="grid text-layout">
+    <div class="col md:col-4 sm: col-12">
+        <p-card header="uppercase" [subheader]="nombreUppercase">
+            {{ nombreLowercase | uppercase }}
+        </p-card>
+    </div>
+    <div class="col md:col-4 sm: col-12">
+        <p-card header="lowercase" [subheader]="nombreLowercase">
+            {{ nombreUppercase | lowercase }}
+        </p-card>
+    </div>
+    <div class="col md:col-4 sm: col-12">
+        <p-card header="titlecase" [subheader]="nombreCompleto | titlecase">
+            {{ nombreCompleto | titlecase }}
+        </p-card>
+    </div>
+</div>
