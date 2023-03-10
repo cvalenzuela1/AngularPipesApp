@@ -1,4 +1,4 @@
-<div class="text-layout">
+<div class="text-layout mt-2">
     <h1>Pipes Comunes</h1>
     <p>
         Pipes incluídos en Angular - Usualmente en el Common Module
@@ -19,6 +19,30 @@
     <div class="col md:col-4 sm: col-12">
         <p-card header="titlecase" [subheader]="nombreCompleto | titlecase">
             {{ nombreCompleto | titlecase }}
+        </p-card>
+    </div>
+</div>
+
+<div class="text-layout mt-4">
+    <h1>Fecha | Date | Pipe</h1>
+    <p>
+        Pipes para mostrar las Fechas
+    </p>
+</div>
+
+<div class="grid">
+    <div class="col md:col-6 sm:col-12">
+        <p-card [header]="locale">
+            <ul>
+                <li>Fecha | Date</li>
+            </ul>
+        </p-card>
+    </div>
+    <div class="col md:col-6 sm:col-12">
+        <p-card [header]="locale">
+            <ul>
+                <li>{{ fecha_local }}</li>
+            </ul>
         </p-card>
     </div>
 </div>
