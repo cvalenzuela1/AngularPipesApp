@@ -1,1 +1,22 @@
-<p class="text-layout">numeros works!</p>
+<div class="text-layout mt-3">
+    <h1>Decimal Pipe y Porcentaje</h1>
+    <p>
+        Pipes incluídos en Angular - Usualmente en el Common Module
+    </p>
+</div>
+
+<div class="grid mt-2">
+    <div class="col md:col-6 sm:col-6">
+        <p-card header="Números" subheader="Cantidad de ventas netas del presente año">
+            {{ ventasNetas | currency:'CLP':'symbol-narrow':'1.0-3' }}
+        </p-card>
+    </div>
+</div>
+
+<div class="grid mt-3">
+    <div class="col md:col-6 sm:col-12">
+        <p-card header="Porcentajes" subheader="Porcentaje de ganancia en ventas del presente año">
+            {{ porcentaje | percent:'1.1-2' }}
+        </p-card>
+    </div>
+</div>

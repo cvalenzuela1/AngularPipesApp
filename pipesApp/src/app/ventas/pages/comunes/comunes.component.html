@@ -34,14 +34,18 @@
     <div class="col md:col-6 sm:col-12">
         <p-card [header]="locale">
             <ul>
-                <li>Fecha | Date</li>
+                <li>Fecha | No Pipe</li>
+                <li>Fecha | date: 'shortDate'</li>
+                <li>Fecha | date: 'MM/dd/yyyy'</li> <!-- No es dd/MM/yyyy porque toma la fecha del sistema la cual es 10/03/2023, pero como la fecha es de USA por defecto el día debería estar en medio, entonces como el del medio es el mes en Chile lo toma y deja la fecha MM/dd/yyyy. En resumen, toma el mes como día y el día como mes -->
             </ul>
         </p-card>
     </div>
     <div class="col md:col-6 sm:col-12">
         <p-card [header]="locale">
             <ul>
-                <li>{{ fecha_local }}</li>
+                <li>{{ fecha }}</li>
+                <li>{{ fecha | date: 'shortDate' }}</li>
+                <li>{{ fecha | date: 'dd/MM/yyyy' }}</li>
             </ul>
         </p-card>
     </div>

@@ -13,11 +13,11 @@ export class ComunesComponent implements OnInit{
 
   countries: object = {
     esCL: "Chile",
-    esAR: "Argentina"
+    esAR: "Argentina",
+    esPE: "Perú"
   };
 
   fecha: Date = new Date();
-  fecha_local: string = this.fecha.toLocaleDateString();
 
   locale: string = "";
 
