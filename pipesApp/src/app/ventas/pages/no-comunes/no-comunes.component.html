@@ -7,16 +7,63 @@
 
 <div class="grid">
     <div class="col md:col-6 sm:col-9">
-        <p-fieldset legend="i18nSelect Pipe" [toggleable]="true">
-            Saludos {{ nombre }}, es un placer
-            {{ genero | i18nSelect:invitarMap }}
+        <p-fieldset *ngIf="clienteNombre.length > 0" legend="i18nSelect Pipe" [toggleable]="true">
+            Saludos {{ clienteNombre }}, es un placer
+            {{ clienteGenero | i18nSelect:invitarMap }}
             a nuestro evento.
+            
         </p-fieldset>
+        <p-fieldset *ngIf="clienteNombre.length == 0" legend="i18nSelect Pipe" [toggleable]="true">
+            Actualmente no hay clientes.
+        </p-fieldset>
+        <button pButton type="button" label="Cambiar Cliente" class="p-button-info mt-3" (click)="cambiarCliente()"></button>
     </div>
 
     <div class="col md:col-6 sm:col-9">
         <p-fieldset legend="i18nPlural Pipe" [toggleable]="true">
             Actualmente {{ clientes.length | i18nPlural:clientesMap }}    
+        </p-fieldset>
+        <button pButton type="button" label="Borrar Cliente" class="p-button-danger mt-3" (click)="borrarCliente()"></button>
+    </div>
+</div>
+
+<div class="grid mt-3">
+    <div class="col md:col-6 sm:col-9">
+        <p-fieldset legend="Slice Pipe" [toggleable]="true">
+            <div id="overflowdiv">
+                <b>Original</b>
+                <pre>{{ clientes | json }}</pre>
+                <b>Slice:0:2</b>
+                <pre>{{ (clientes | slice:0:2) | json }}</pre>
+                <b>Slice:1:2</b>
+                <pre>{{ (clientes | slice:1:2) | json }}</pre>
+            </div>
+        </p-fieldset>
+    </div>
+
+    <div class="col md:col-6 sm:col-9">
+        <p-fieldset legend="KeyValue Pipe" [toggleable]="true">
+            <ul>
+                <li *ngFor="let item of persona | keyvalue">
+                    {{ item.key | titlecase }} - {{ item.value }}
+                </li>
+            </ul>
+        </p-fieldset>
+    </div>
+</div>
+
+<div class="grid mt-3">
+    <div class="col md:col-6 sm:col-9">
+        <p-fieldset legend="Json Pipe" [toggleable]="true">
+            <div id="overflowdiv">
+                <pre>{{ clientes | json }}</pre>
+            </div> 
+        </p-fieldset>
+    </div>
+
+    <div class="col md:col-6 sm:col-9">
+        <p-fieldset legend="Async Pipe" [toggleable]="true">
+            <pre>{{ miObservable | async }}</pre>
         </p-fieldset>
     </div>
 </div>
