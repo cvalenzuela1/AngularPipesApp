@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Cliente } from '../../interfaces/cliente';
-
 import { interval } from 'rxjs';
+
+import { Cliente } from '../../interfaces/cliente.interface';
+
 
 @Component({
   selector: 'app-no-comunes',
